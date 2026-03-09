@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --background-secondary: 0 0% 97%;
+    --foreground: 0 0% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
+    --primary: 0 0% 7%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 12%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 42%;
+    --accent: 0 0% 7%;
+    --accent-foreground: 0 0% 100%;
+    --gold: 45 100% 51%;
+    --gold-foreground: 0 0% 7%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 91%;
+    --input: 0 0% 91%;
+    --ring: 0 0% 7%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  code, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .section-light {
+    @apply bg-background;
+  }
+  .section-gray {
+    background: linear-gradient(180deg, hsl(0 0% 97%) 0%, hsl(0 0% 100%) 100%);
+  }
+  .section-gradient {
+    background: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 97%) 50%, hsl(0 0% 100%) 100%);
+  }
+  .card-elevated {
+    @apply rounded-2xl border border-border bg-card shadow-sm transition-all duration-300;
+  }
+  .card-elevated:hover {
+    @apply shadow-lg -translate-y-1;
+    box-shadow: 0 20px 40px -12px hsl(0 0% 0% / 0.08), 0 8px 16px -8px hsl(0 0% 0% / 0.06);
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:scale-105;
+    box-shadow: 0 4px 14px hsl(0 0% 0% / 0.15);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 6px 20px hsl(0 0% 0% / 0.25);
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-full border border-border bg-card px-8 py-3.5 text-sm font-semibold text-foreground transition-all duration-300 hover:border-foreground/30 hover:bg-secondary;
+  }
+  .section-divider {
+    @apply mx-auto h-px w-full max-w-5xl;
+    background: linear-gradient(90deg, transparent, hsl(var(--border)), transparent);
+  }
+  section + section {
+    margin-top: 0;
+  }
+}
+
+/* Hide native scrollbar */
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+html {
+  scroll-behavior: smooth;
+}
