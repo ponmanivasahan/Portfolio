@@ -1,10 +1,23 @@
-export const profile={
-    name:"PONMANIVASHAN",
-    title:"Full Stack Developer",
-    description:"I build beautiful animated websites and currently working on games and best part of me is I love working backend systems and automate infrastructure with Devops and cloud technologies.",
-    taglines:[
-        "Building scalable backend systems",
-        "Design distributed architectures",
-        
-    ]
-}
+// data/profile.js
+export const profile = {
+  name: "PONMANI VASHAN",
+  title: "Full Stack Developer",
+  description: "I build exceptional digital experiences that make a difference.",
+  taglines: [
+    "Full Stack Developer",
+    "React Specialist",
+    "UI/UX Enthusiast",
+    "Problem Solver"
+  ],
+  stats: [
+    { label: "Years Experience", value: "5+" },
+    { label: "Projects Completed", value: "50+" },
+    { label: "Happy Clients", value: "30+" },
+    { label: "Countries", value: "10+" }
+  ],
+  social: {
+    github: "https://github.com/yourusername",
+    linkedin: "https://linkedin.com/in/yourusername",
+    email: "your.email@example.com"
+  }
+};

@@ -95,7 +95,7 @@ const Loader = ({ onComplete }) => {
     return () => { tl.kill(); };
   }, []);
 
-  const name = "PONMANI VASHAN";
+  const name = "PONMANI VASAHAN";
   const fallingLines = Array.from({ length: 40 });
 
   return (
