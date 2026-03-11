@@ -23,8 +23,7 @@ const About = () => {
               Craafting robust systems that scale
             </h2>
             <p className='mt-4 text-sm leading-relaxed text-muted-foreground sm:mtm-6 sm:text-base md:text-lg'>
-              {/* {profile.about} */}
-              I'm a passionate software engineer with a knack for building beautiful and  efficient web applications. With a strong foundation in both frontend and backend technologies.
+              {profile.about}
             </p>
           </div>
           <div className='flex justify-center lg:justify-end'>
