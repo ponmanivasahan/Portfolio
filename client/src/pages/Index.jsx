@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Loader from "../components/Loader.jsx";
 import Navbar from "../components/Navbar.jsx";
 import Hero from "../sections/Hero.jsx";
-// import About from "../sections/About.jsx";
+import About from "../sections/About.jsx";
 // import Experience from "../sections/Experience.jsx";
 // import Projects from "../sections/Projects.jsx";
 // import CodingStats from "../sections/CodingStats.jsx";
@@ -47,7 +47,7 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        {/* <About /> */}
+        <About />
         {/* <Experience /> */}
         {/* <Projects /> */}
         {/* <CodingStats /> */}
