@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Loader from "../components/Loader.jsx";
@@ -17,80 +17,82 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Index = () => {
   const [loading, setLoading] = useState(true);
-  const [showContent, setShowContent] = useState(false);
-  
+  const contentRef = useRef(null);
+  const loaderCompleteRef = useRef(false);
+
   const handleLoaderComplete = useCallback(() => {
+    if (loaderCompleteRef.current) return;
+    loaderCompleteRef.current = true;
+    
     setLoading(false);
-    // Small delay to ensure smooth transition
+    
     setTimeout(() => {
-      setShowContent(true);
-    }, 100);
+      ScrollTrigger.refresh();
+    }, 500);
   }, []);
 
-  // Refresh ScrollTrigger after content is shown
   useEffect(() => {
-    if (showContent) {
-      ScrollTrigger.refresh();
+    if (!loading && contentRef.current) {
+      gsap.fromTo(contentRef.current, 
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.8, ease: "power2.out", delay: 0.1 }
+      );
     }
-  }, [showContent]);
-
-  if (loading) {
-    return <Loader onComplete={handleLoaderComplete} />;
-  }
-
-  if (!showContent) {
-    return null; // Short delay before showing content
-  }
+  }, [loading]);
 
   return (
     <>
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        {/* <Experience /> */}
-        {/* <Projects /> */}
-        <CodingStats />
-        {/* <Achievements /> */}
-        {/* <Contact /> */}
-      </main>
-      
-      <footer className="border-t border-border bg-card py-10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 sm:flex-row">
-          <p className="flex items-center gap-1 text-sm text-muted-foreground">
-            Built with <Heart className="h-3.5 w-3.5 mx-1" style={{ color: "hsl(var(--gold))" }} /> by PONMANIVASHAN
-          </p>
-          
-          <div className="flex items-center gap-4">
-            <a 
-              href={profile.social?.github || "https://github.com"} 
-              target="_blank" 
-              rel="noreferrer" 
-              className="text-muted-foreground transition-colors hover:text-foreground"
-            >
-              <Github className="h-4 w-4" />
-            </a>
-            <a 
-              href={profile.social?.linkedin || "https://linkedin.com"} 
-              target="_blank" 
-              rel="noreferrer" 
-              className="text-muted-foreground transition-colors hover:text-foreground"
-            >
-              <Linkedin className="h-4 w-4" />
-            </a>
-            <a 
-              href={`mailto:${profile.social?.email || "example@email.com"}`} 
-              className="text-muted-foreground transition-colors hover:text-foreground"
-            >
-              <Mail className="h-4 w-4" />
-            </a>
+      {loading && <Loader onComplete={handleLoaderComplete} />}
+      <div
+        ref={contentRef}
+        style={{
+          opacity: 0,
+        }}
+      >
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <CodingStats />
+        </main>
+        
+        <footer className="border-t border-border bg-card py-10">
+          <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 sm:flex-row">
+            <p className="flex items-center gap-1 text-sm text-muted-foreground">
+              Built with <Heart className="h-3.5 w-3.5 mx-1" style={{ color: "hsl(var(--gold))" }} /> by PONMANIVASHAN
+            </p>
+            
+            <div className="flex items-center gap-4">
+              <a 
+                href={profile.social?.github || "https://github.com"} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <Github className="h-4 w-4" />
+              </a>
+              <a 
+                href={profile.social?.linkedin || "https://linkedin.com"} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
+              <a 
+                href={`mailto:${profile.social?.email || "example@email.com"}`} 
+                className="text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <Mail className="h-4 w-4" />
+              </a>
+            </div>
+            
+            <p className="text-xs text-muted-foreground">
+              © {new Date().getFullYear()} All rights reserved.
+            </p>
           </div>
-          
-          <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} All rights reserved.
-          </p>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </>
   );
 };

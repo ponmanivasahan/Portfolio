@@ -9,7 +9,6 @@ const Hero = () => {
   const hasAnimated = useRef(false);
   const [isMounted, setIsMounted] = useState(false);
   
-  // Only run typing animation after component is mounted
   const typedText = useTypingAnimation(profile.taglines || ["Full Stack Developer"]);
 
   useEffect(() => {
@@ -24,10 +23,8 @@ const Hero = () => {
     if (els.length > 0) {
       hasAnimated.current = true;
       
-      // Set initial state
       gsap.set(els, { y: 40, opacity: 0 });
       
-      // Create animation with a small delay to ensure everything is ready
       const tl = gsap.timeline({ delay: 0.3 });
       tl.to(els, { 
         y: 0, 
@@ -35,7 +32,7 @@ const Hero = () => {
         duration: 0.8, 
         stagger: 0.15, 
         ease: "power3.out",
-        clearProps: "transform" // Clean up after animation
+        clearProps: "transform" 
       });
       
       return () => {
@@ -50,8 +47,6 @@ const Hero = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
-  // Don't render until mounted to avoid hydration issues
   if (!isMounted) {
     return null;
   }
@@ -118,7 +113,7 @@ const Hero = () => {
               </div>
             ))
           ) : (
-            // Default stats if none provided
+            // default stats if none provided
             <>
               <div className="text-center">
                 <p className="text-xl font-bold text-foreground sm:text-2xl md:text-3xl">5+</p>
@@ -133,7 +128,6 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Scroll Indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce sm:bottom-10">
         <ArrowDown className="h-4 w-4 text-muted-foreground sm:h-5 sm:w-5" />
       </div>

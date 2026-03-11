@@ -5,7 +5,7 @@ import {Github, Code2, BookOpen, Star, GitFork, Flame, Target, TrendingUp, Award
 gsap.registerPlugin(ScrollTrigger);
 const platforms =[
   {
-    name:"GitHub",icon: Github,link: "github.com/hemanth", color: "from-foreground/10 to-foreground/5",
+    name:"GitHub",icon: Github,link: "github.com/xyz", color: "from-foreground/10 to-foreground/5",
     stats: [
       { label: "Repositories", value: "40+", icon: BookOpen },
       { label: "Stars Earned", value: "120+", icon: Star },
@@ -13,7 +13,7 @@ const platforms =[
     ],
   },
   {
-    name: "LeetCode", icon: Code2, link: "leetcode.com/hemanth", color: "from-yellow-500/10 to-yellow-500/5",
+    name: "LeetCode", icon: Code2, link: "leetcode.com/xyz", color: "from-yellow-500/10 to-yellow-500/5",
     stats: [
       { label: "Problems Solved", value: "500+", icon: Target },
       { label: "Contest Rating", value: "1,850", icon: TrendingUp },
@@ -21,7 +21,7 @@ const platforms =[
     ],
   },
   {
-    name: "GeeksforGeeks", icon: BookOpen, link: "geeksforgeeks.org/user/hemanth", color: "from-green-500/10 to-green-500/5",
+    name: "GeeksforGeeks", icon: BookOpen, link: "geeksforgeeks.org/user/xyz", color: "from-green-500/10 to-green-500/5",
     stats: [
       { label: "Problems Solved", value: "350+", icon: Target },
       { label: "Institute Rank", value: "#5", icon: Award },
