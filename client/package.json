@@ -3,14 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://ponmanivasahan.github.io/Portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist",
-  "homepage": "https://ponmanivasahan.github.io/Portfolio"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "gsap": "^3.14.2",
