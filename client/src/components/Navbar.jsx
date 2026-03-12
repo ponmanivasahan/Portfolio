@@ -7,6 +7,7 @@ const navLinks = [
   { label: "About Me", href: "#about" },
   { label: "Achievements", href: "#achievements" },
   { label: "Projects", href: "#projects" },
+  {label:"Stats",href:"#stats"},
   {label: "Contact", href:"#contact"},
 ];
 
@@ -18,27 +19,37 @@ const Navbar = () => {
   const hasAnimated = useRef(false);
   const dotRefs = useRef([]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+useEffect(() => {
+  setActiveSection("#hero");
+  
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 50);
+        if (window.scrollY > 100) {
       const sections = navLinks.map((l) => l.href.slice(1));
-      for (let i = sections.length - 1; i >= 0; i--) {
+      let currentSection = "#hero";
+      
+      for (let i = 0; i < sections.length; i++) {
         const el = document.getElementById(sections[i]);
         if (el) {
           const rect = el.getBoundingClientRect();
           if (rect.top <= 150 && rect.bottom >= 100) {
-            setActiveSection(`#${sections[i]}`);
+            currentSection = `#${sections[i]}`;
             break;
+          }
+          if (i === sections.length - 1 && rect.top <= window.innerHeight / 2) {
+            currentSection = `#${sections[i]}`;
           }
         }
       }
-    };
+      
+      setActiveSection(currentSection);
+    }
+  };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   useEffect(() => {
     dotRefs.current.forEach((dot, i) => {
@@ -74,6 +85,7 @@ const Navbar = () => {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+      setActiveSection(href);
     }
   };
 
@@ -81,7 +93,7 @@ const Navbar = () => {
     <>
       <nav 
         ref={navRef} 
-        className="fixed top-5 left-0 right-0 z-40 flex justify-center px-4"
+        className="fixed top-5 left-0 right-0 z-[100] flex justify-center px-4"
         style={{ opacity: 0 }}
       >
         <div 
@@ -113,7 +125,7 @@ const Navbar = () => {
                   className="absolute bottom-0 left-0 h-[2px] rounded-full transition-all duration-300 ease-out"
                   style={{
                     width: activeSection === link.href ? "100%" : "0",
-                    background: activeSection === link.href ? "hsl(var(--gold))" : "hsl(var(--foreground))",
+                    background: "hsl(var(--gold))",
                     opacity: activeSection === link.href ? 1 : 0,
                   }} 
                 />
@@ -130,7 +142,7 @@ const Navbar = () => {
         </div>
 
         {mobileOpen && (
-          <div className="absolute top-14 left-1/2 -translate-x-1/2 w-52 rounded-2xl border border-border bg-card shadow-xl px-5 py-4 space-y-3 lg:hidden">
+          <div className="absolute top-14 left-1/2 -translate-x-1/2 w-52 rounded-2xl border border-border bg-card shadow-xl px-5 py-4 space-y-3 lg:hidden z-[101]">
             {navLinks.map((link) => (
               <a 
                 key={link.href} 
@@ -145,7 +157,7 @@ const Navbar = () => {
           </div>
         )}
       </nav>
-      <div className="fixed right-4 top-1/2 z-50 -translate-y-1/2 hidden flex-col items-center gap-3 lg:flex">
+      <div className="fixed right-4 top-1/2 z-[101] -translate-y-1/2 hidden flex-col items-center gap-3 lg:flex" style={{ transform: 'translateY(-50%)' }}>
         {navLinks.map((link, i) => (
           <a 
             key={link.href} 
@@ -155,6 +167,7 @@ const Navbar = () => {
               const element = document.querySelector(link.href);
               if (element) {
                 element.scrollIntoView({ behavior: "smooth" });
+                setActiveSection(link.href);
               }
             }} 
             title={link.label} 
@@ -162,7 +175,7 @@ const Navbar = () => {
           >
             <span
               ref={(el) => { dotRefs.current[i] = el; }}
-              className="block"
+              className="block cursor-pointer"
               style={{
                 background: "hsl(var(--gold))",
                 width: activeSection === link.href ? 12 : 3,

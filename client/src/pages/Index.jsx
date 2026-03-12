@@ -33,8 +33,8 @@ const Index = () => {
   useEffect(() => {
     if (!loading && contentRef.current) {
       gsap.fromTo(contentRef.current, 
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8, ease: "power2.out", delay: 0.1 }
+        { opacity: 0 },
+        { opacity: 1, duration: 0.8, ease: "power2.out", delay: 0.1 }
       );
     }
   }, [loading]);
@@ -42,13 +42,13 @@ const Index = () => {
   return (
     <>
       {loading && <Loader onComplete={handleLoaderComplete} />}
+      {!loading && <Navbar />}
       <div
         ref={contentRef}
         style={{
           opacity: 0,
         }}
       >
-        <Navbar />
         <main>
           <Hero />
           <About />

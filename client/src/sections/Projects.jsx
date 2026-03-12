@@ -30,7 +30,7 @@ const Projects = () => {
 
         <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {filtered.map((project)=>(
-            <Link key={project.id} tp={`/project/${project.id}`} className="card-elevated group relative overflow-hidden p-4 sm:p-6 block">
+            <Link key={project.id} to={`/project/${project.id}`} className="card-elevated group relative overflow-hidden p-4 sm:p-6 block">
               {project.featured && (
                 <div className="absolute right-3 top-3 flex items-center gap-1 rounded-full px-2 py-0.5 text-[9px] font-medium sm:right-4 sm:top-4 sm:text-[10px]" style={{background:"hsl(var(--gold)/0.1)",color:"hsl(var(--gold-foreground))"}}>
                   <Star className="h-2.5 w-2.5 sm:h-3 sm:w-3" /> Featured
