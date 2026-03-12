@@ -8,8 +8,8 @@ import About from "../sections/About.jsx";
 // import Experience from "../sections/Experience.jsx";
 // import Projects from "../sections/Projects.jsx";
 import CodingStats from "../sections/CodingStats.jsx";
-// import Achievements from "../sections/Achievements.jsx";
-// import Contact from "../sections/Contact.jsx";
+import Achievements from "../sections/Achievements.jsx";
+import Contact from "../sections/Contact.jsx";
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
 import { profile } from "../data/profile.js";
 
@@ -53,7 +53,9 @@ const Index = () => {
         <main>
           <Hero />
           <About />
+          <Achievements />
           <CodingStats />
+          <Contact />
         </main>
         
         <footer className="border-t border-border bg-card py-10">
