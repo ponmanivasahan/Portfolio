@@ -20,7 +20,7 @@ const About = () => {
               About Me
             </div>
             <h2 className='text-2xl font-bold text-foreground sm:text-3xl md:text-5xl'>
-              Craafting robust systems that scale
+              Building skills through real projects
             </h2>
             <p className='mt-4 text-sm leading-relaxed text-muted-foreground sm:mtm-6 sm:text-base md:text-lg'>
               {profile.about}
@@ -42,7 +42,7 @@ const About = () => {
                 {iconMap[spec.icon]}
               </div>
               <h3 className="mb-2 text-sm font-semibold text-foreground sm:text-base">{spec.title}</h3>
-              <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">I am Specalized in xyz spec</p>
+                <p className="text-xs leading-relaxed text-muted-foreground sm:text-sm">{spec.description}</p>
               <div className="mt-3 h-[2px] w-8 rounded-full bg-border transition-all duration-300 group-hover:w-full sm:mt-4" style={{"--hover-bg":"hsl(var(--gold)/0.3)"}} />
               </div>
           ))}

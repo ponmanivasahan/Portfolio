@@ -1,173 +1,118 @@
-export const projectCategories = ["All", "Full Stack", "Cloud", "Mobile", "AI/ML", "DevOps"];
+export const projectCategories = ["All", "HTML/CSS", "JavaScript", "React"];
 
 export const projects = [
   {
     id: 1,
-    title: "Cloud-Native E-Commerce Platform",
-    description: "A scalable e-commerce platform built with microservices architecture, deployed on AWS EKS with auto-scaling and CI/CD pipeline.",
-    longDescription: "Designed and implemented a cloud-native e-commerce platform handling 10K+ concurrent users. The system uses microservices architecture with Kubernetes orchestration, ensuring high availability and fault tolerance.",
-    category: "Cloud",
-    featured: true,
-    tech: ["React", "Node.js", "AWS", "Kubernetes", "Docker", "MongoDB", "Redis"],
-    role: "Lead Developer & Cloud Architect",
-    duration: "6 months",
-    team: "4 developers",
-    github: "https://github.com/username/ecommerce-platform",
-    demo: "https://ecommerce-demo.com",
-    challenge: "The client needed a platform that could handle sudden traffic spikes during sales events while maintaining performance and reliability. The existing monolithic solution couldn't scale effectively.",
-    solution: "Implemented a microservices architecture with Kubernetes orchestration. Used AWS EKS for container management, Redis for caching, and MongoDB for product catalog. Set up auto-scaling policies to handle traffic spikes.",
-    architecture: "The system consists of 8 microservices including product catalog, user authentication, order processing, payment, inventory, and notification services. Each service is containerized and deployed separately.",
-    features: [
-      "Real-time inventory management",
-      "JWT-based authentication",
-      "Payment gateway integration",
-      "Order tracking system",
-      "Admin dashboard with analytics"
-    ],
-    impact: [
-      "Handles 50K+ concurrent users during peak times",
-      "99.9% uptime achieved",
-      "60% faster page loads compared to previous system"
-    ]
+    title: "Calculator Demo",
+    description:
+      "A calculator project I built while learning HTML and CSS around 6 months ago.",
+    category: "HTML/CSS",
+    featured: false,
+    tech: ["HTML", "CSS"],
+    role: "Solo Learner",
+    duration: "Built 6 months ago",
+    team: "1 student",
+    github: "https://github.com/ponmanivasahan/calculator-demo-",
+    challenge:
+      "I wanted to understand layouts, spacing, and button alignment while creating something useful.",
+    solution:
+      "I built a clean calculator interface with structured HTML and styled it using CSS.",
+    features: ["Calculator UI layout", "Button grid", "Responsive sizing"],
+    impact: ["Improved my HTML and CSS basics", "Built confidence through a complete mini project"],
   },
   {
     id: 2,
-    title: "AI-Powered Code Review Assistant",
-    description: "An intelligent code review tool that uses machine learning to detect bugs, suggest improvements, and enforce coding standards.",
-    category: "AI/ML",
-    featured: true,
-    tech: ["Python", "TensorFlow", "FastAPI", "React", "PostgreSQL", "Docker"],
-    role: "ML Engineer & Full Stack Developer",
-    duration: "4 months",
-    team: "3 developers",
-    github: "https://github.com/username/code-review-assistant",
-    demo: "https://code-assistant-demo.com",
-    challenge: "Development teams spend significant time on code reviews, often missing common bugs and style issues. Manual review processes are inconsistent and time-consuming.",
-    solution: "Built an ML model trained on millions of code samples to detect bugs, security vulnerabilities, and style violations. Integrated with GitHub/GitLab APIs for automated PR reviews.",
-    architecture: "Uses BERT-based model fine-tuned on code datasets. FastAPI backend serves predictions, React frontend provides dashboard. PostgreSQL stores review history and analytics.",
-    features: [
-      "Real-time PR analysis",
-      "Security vulnerability detection",
-      "Code style enforcement",
-      "Performance optimization suggestions",
-      "Integration with GitHub/GitLab"
-    ],
-    impact: [
-      "Reduced review time by 40%",
-      "Detected 500+ critical bugs before production",
-      "Used by 50+ development teams"
-    ]
+    title: "Travel Page",
+    description:
+      "A static travel-themed page focused on visual sections and responsive design basics.",
+    category: "HTML/CSS",
+    featured: false,
+    tech: ["HTML", "CSS"],
+    role: "Solo Learner",
+    duration: "Learning phase project",
+    team: "1 student",
+    github: "https://github.com/ponmanivasahan/travel-page",
+    challenge:
+      "I wanted to practice creating a complete landing page with clean spacing and section structure.",
+    solution:
+      "I built a travel landing page with reusable section styling and responsive behavior.",
+    features: ["Hero section", "Destination blocks", "Basic responsive layout"],
+    impact: ["Improved page composition skills", "Practiced CSS structure for multi-section pages"],
   },
   {
     id: 3,
-    title: "TaskFlow - Project Management Suite",
-    description: "A comprehensive project management tool with real-time collaboration, task tracking, and team analytics capabilities.",
-    category: "Full Stack",
-    featured: false,
-    tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Socket.io", "Tailwind"],
-    role: "Full Stack Developer",
-    duration: "3 months",
-    team: "2 developers",
-    github: "https://github.com/username/taskflow",
-    demo: "https://taskflow-demo.com",
-    challenge: "Teams struggle with scattered communication and lack of visibility into project progress. Existing tools are either too complex or missing essential features.",
-    solution: "Created an intuitive project management tool with real-time updates, drag-drop interfaces, and comprehensive reporting. Focused on user experience and team collaboration.",
-    architecture: "Next.js frontend with server-side rendering. Prisma ORM with PostgreSQL database. Socket.io for real-time updates. Deployed on Vercel with AWS RDS.",
-    features: [
-      "Real-time task updates",
-      "Drag-drop kanban boards",
-      "Team chat integration",
-      "Time tracking",
-      "Automated reporting"
-    ],
-    impact: [
-      "Used by 20+ active teams",
-      "4.8/5 rating from users",
-      "Increased team productivity by 35%"
-    ]
+    title: "Vending Machine",
+    description:
+      "A vending machine project using HTML, CSS, and JavaScript to practice interaction logic.",
+    category: "JavaScript",
+    featured: true,
+    tech: ["HTML", "CSS", "JavaScript"],
+    role: "Solo Learner",
+    duration: "Learning phase project",
+    team: "1 student",
+    github: "https://github.com/ponmanivasahan/vending-machine",
+    challenge:
+      "I wanted to move beyond static pages and build something interactive with JavaScript.",
+    solution:
+      "I implemented product selection and interaction flow using JavaScript event handling.",
+    features: ["Product selection flow", "UI feedback", "Interactive controls"],
+    impact: ["Strengthened JavaScript basics", "Learned to connect UI with logic"],
   },
   {
     id: 4,
-    title: "HealthTrack Mobile App",
-    description: "A cross-platform mobile app for tracking fitness activities, nutrition, and health metrics with personalized insights.",
-    category: "Mobile",
-    featured: false,
-    tech: ["React Native", "Redux", "Node.js", "MongoDB", "HealthKit", "Google Fit"],
-    role: "Mobile Developer",
-    duration: "5 months",
-    team: "3 developers",
-    github: "https://github.com/username/healthtrack",
-    demo: "https://healthtrack-demo.com",
-    challenge: "People need a unified platform to track various health metrics across different devices and services.",
-    solution: "Developed a cross-platform mobile app that integrates with HealthKit, Google Fit, and wearables. Provides personalized health insights and recommendations.",
-    architecture: "React Native for cross-platform mobile development. Node.js backend with MongoDB. Integration with multiple health APIs.",
-    features: [
-      "Activity tracking",
-      "Nutrition logging",
-      "Sleep analysis",
-      "Integration with wearables",
-      "Personalized insights"
-    ],
-    impact: [
-      "10K+ downloads",
-      "4.7 star rating",
-      "Featured in App Store"
-    ]
+    title: "YouTube Clone",
+    description:
+      "A React-based YouTube UI clone built to learn component structure and frontend architecture.",
+    category: "React",
+    featured: true,
+    tech: ["React", "JavaScript", "CSS"],
+    role: "Solo Learner",
+    duration: "React learning project",
+    team: "1 student",
+    github: "https://github.com/ponmanivasahan/finalyoutube",
+    challenge:
+      "I wanted to understand how large UIs are split into reusable React components.",
+    solution:
+      "I built a YouTube-style interface by dividing the app into reusable React components.",
+    features: ["Reusable components", "Video card layout", "Navigation structure"],
+    impact: ["Better React component understanding", "Improved frontend structuring skills"],
   },
   {
     id: 5,
-    title: "DevOps CI/CD Pipeline",
-    description: "Automated CI/CD pipeline with comprehensive testing, security scanning, and multi-environment deployment strategies.",
-    category: "DevOps",
+    title: "Gaming Project",
+    description:
+      "A game project with HTML, CSS, and JavaScript using OOP concepts I learned in school and practiced in college.",
+    category: "JavaScript",
     featured: true,
-    tech: ["Jenkins", "GitHub Actions", "Terraform", "Ansible", "AWS", "Prometheus"],
-    role: "DevOps Engineer",
-    duration: "2 months",
-    team: "1 developer",
-    github: "https://github.com/username/devops-pipeline",
-    demo: "https://devops-demo.com",
-    challenge: "Manual deployment processes were error-prone and slow, taking up to 2 days for production releases.",
-    solution: "Implemented automated CI/CD pipeline with GitHub Actions and Jenkins. Infrastructure as Code using Terraform. Comprehensive testing and security scanning at each stage.",
-    architecture: "Multi-stage pipeline with parallel testing, security scanning, and automated deployments to staging/production. Monitoring with Prometheus and Grafana.",
-    features: [
-      "Automated testing",
-      "Security vulnerability scanning",
-      "Multi-environment deployment",
-      "Infrastructure as Code",
-      "Real-time monitoring"
-    ],
-    impact: [
-      "Deployment time reduced from 2 days to 30 minutes",
-      "Zero deployment failures in 6 months",
-      "Automated security compliance checks"
-    ]
+    tech: ["HTML", "CSS", "JavaScript", "OOP"],
+    role: "Solo Learner",
+    duration: "School basics to college practice",
+    team: "1 student",
+    github: "https://github.com/ponmanivasahan/Gaming",
+    challenge:
+      "I wanted to apply OOP basics from school in a practical and fun project.",
+    solution:
+      "I built a game with class-based JavaScript logic and interactive gameplay flow.",
+    features: ["OOP-based logic", "Interactive gameplay", "Reusable game components"],
+    impact: ["Applied OOP concepts in real code", "Improved confidence in JavaScript architecture"],
   },
   {
     id: 6,
-    title: "Data Analytics Dashboard",
-    description: "Interactive dashboard for visualizing business metrics, with real-time data processing and predictive analytics.",
-    category: "Full Stack",
-    featured: false,
-    tech: ["Vue.js", "D3.js", "Python", "FastAPI", "TimescaleDB", "Redis"],
-    role: "Full Stack Developer",
-    duration: "4 months",
-    team: "2 developers",
-    github: "https://github.com/username/analytics-dashboard",
-    demo: "https://analytics-demo.com",
-    challenge: "Business stakeholders needed real-time insights from complex data but existing reports were static and slow.",
-    solution: "Built interactive dashboard with real-time data visualization. Implemented predictive analytics using time-series forecasting.",
-    architecture: "Vue.js frontend with D3.js for visualizations. FastAPI backend with TimescaleDB for time-series data. Redis for caching.",
-    features: [
-      "Real-time data streaming",
-      "Interactive charts",
-      "Predictive analytics",
-      "Custom report builder",
-      "Export capabilities"
-    ],
-    impact: [
-      "50% faster decision-making",
-      "Handles 1M+ data points daily",
-      "Used by executive team"
-    ]
-  }
+    title: "WebOS Aurora OS",
+    description:
+      "A React project I am currently working on while continuing my college learning journey.",
+    category: "React",
+    featured: true,
+    tech: ["React", "JavaScript", "CSS"],
+    role: "Solo Builder",
+    duration: "Currently in progress",
+    team: "1 student",
+    github: "https://github.com/ponmanivasahan/WebOS",
+    challenge:
+      "I wanted to build a larger React project that feels like an operating-system style web experience.",
+    solution:
+      "I am building WebOS Aurora OS step by step, improving features as I learn more React patterns.",
+    features: ["OS-style UI concept", "React component architecture", "Ongoing feature additions"],
+    impact: ["Current long-term learning project", "Helps me grow frontend and backend readiness together"],
+  },
 ];

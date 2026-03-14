@@ -1,8 +1,7 @@
 import React from 'react'
 import {useState} from "react";
-import {Link} from "react-router-dom";
 import {projects,projectCategories} from "../data/projects.js";
-import {Star, ArrowRight} from "lucide-react";
+import {Star, Github} from "lucide-react";
 const Projects = () => {
   const [activeFilter,setActiveFilter]=useState("All");
   const filtered=activeFilter==="All" ? projects:projects.filter((p)=>p.category===activeFilter);
@@ -17,7 +16,7 @@ const Projects = () => {
         </div>
         <h2 className="mb-3 text-2xl font-bold text-foreground sm:text-3xl md:text-5xl">Featured Work</h2>
         <p className="mb-8 max-w-2xl text-sm text-muted-foreground sm:mb-10 sm:text-base">
-          A selection of projects showcasing  fullstack, cloud infrastructure, and distributed systems. Click any project to see the full case study.
+          A selection of my real learning projects. Each card links directly to the GitHub repository.
         </p>
         <div className="mb-8 flex flex-wrap gap-2 sm:mb-12">
           {projectCategories.map((cat)=>(
@@ -30,13 +29,12 @@ const Projects = () => {
 
         <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {filtered.map((project)=>(
-            <Link key={project.id} to={`/project/${project.id}`} className="card-elevated group relative overflow-hidden p-4 sm:p-6 block">
+            <article key={project.id} className="card-elevated group relative overflow-hidden p-4 sm:p-6">
               {project.featured && (
                 <div className="absolute right-3 top-3 flex items-center gap-1 rounded-full px-2 py-0.5 text-[9px] font-medium sm:right-4 sm:top-4 sm:text-[10px]" style={{background:"hsl(var(--gold)/0.1)",color:"hsl(var(--gold-foreground))"}}>
                   <Star className="h-2.5 w-2.5 sm:h-3 sm:w-3" /> Featured
                 </div>
               )}
-              <div className="mb-3 h-1 w-10 rounded-full bg-border transition-all duration-300 group-hover:w-full sm:mb-4 sm:w-12" />
               <h3 className="mb-2 text-base font-semibold text-foreground sm:text-lg">{project.title}</h3>
               <p className="mb-3 text-xs leading-relaxed text-muted-foreground line-clamp-3 sm:mn-4 sm:text-sm">{project.description}</p>
               <div className="mb-4 flex flex-wrap gap-1 sm:mb-5 sm:gap-1.5">
@@ -45,10 +43,15 @@ const Projects = () => {
                 ))}
               </div>
 
-              <div className="flex items-center gap-1.5 tex-[10px] font-medium transition-colors group-hover:text-foreground sm:text-xs" style={{color:"hsl(var(--gold-foreground))"}}>
-                View Case Study <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-              </div>
-            </Link>
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-[10px] font-medium text-foreground transition-colors hover:border-foreground/30 sm:text-xs"
+              >
+                <Github className="h-3.5 w-3.5" /> GitHub Repository
+              </a>
+            </article>
           ))}
         </div>
       </div>

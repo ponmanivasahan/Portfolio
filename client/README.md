@@ -1,6 +1,6 @@
 # 🚀 Developer Portfolio
 
-A clean, fast, and fully responsive **Backend Developer & DevOps Engineer** portfolio built with React, GSAP, Tailwind CSS, and Lucide React icons. No UI libraries, no heavy dependencies — just pure JSX and smooth animations.
+A clean, fast, and fully responsive **first-year CS student portfolio** built with React, GSAP, Tailwind CSS, and Lucide React icons. It highlights real projects I built while learning HTML, CSS, JavaScript, React, and Node.js basics.
 
 ---
 
@@ -13,7 +13,7 @@ A clean, fast, and fully responsive **Backend Developer & DevOps Engineer** port
 - Add new sections or remove existing ones
 - Deploy it anywhere — Vercel, Netlify, GitHub Pages, etc.
 
-All you need to do is **replace the dummy data** with your own information.
+This version now contains real personal project data and ongoing learning progress.
 
 If this saved you time or you liked the design, **please give it a star on GitHub** — it genuinely helps and takes just one click. 🙏
 
@@ -27,18 +27,16 @@ Loader animation → Hero → About → Projects → Coding Stats → Achievemen
 
 ---
 
-## ⚠️ Dummy Data Notice
+## ✅ Real Data Notice
 
-All data in this project is placeholder/dummy data for demonstration purposes only.
+This portfolio now uses real personal data, actual GitHub repositories, and a real learning timeline.
 
-| File | Dummy Content |
-|------|--------------|
-| `src/data/profile.js` | Name, bio, specializations, social links |
-| `src/data/projects.js` | Project titles, descriptions, tech stacks, impact metrics |
-| `src/sections/CodingStats.jsx` | GitHub stats, LeetCode rating, GFG rank — all hardcoded |
-| `src/sections/Achievements.jsx` | All achievements are placeholder examples |
+Current focus:
 
-**To make this your own, edit those files with your real information.**
+- First-year Computer Science student journey
+- JavaScript as strongest language
+- Currently learning Node.js and backend fundamentals
+- Working on college projects side by side with personal projects
 
 ---
 

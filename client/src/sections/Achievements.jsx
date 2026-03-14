@@ -5,10 +5,10 @@ const achievements=[{
   title:"2x National Hackathon Winner", description:"Won first place at two national-level hackathons competing against 500+ teams, building innovative solutions for real-world problems.", icon:Trophy, highlight:true
 },
 {
-  title:"AWS Certified Solutions Architect", description:"Achieved AWS Solutions Architect Associate certification, demonstrating expertise in cloud architecture and best practices.",icon:Award
+  title:"Cisco Certified (CCNA)", description:"Completed Cisco certification training and strengthened networking fundamentals useful for backend and system understanding.",icon:Award
 },
 {
-  title:"Top 30% on LeetCode", description:"Consistently ranked in the top 30% of the LeetCode users with 500+ problems solved across all difficulty levels.",icon:Star
+  title:"First-Year Learning Progress", description:"As a first-year student, I learn coding through tutorials and regular project practice in HTML, CSS, JavaScript, and React.",icon:Star
 },
 
 ]

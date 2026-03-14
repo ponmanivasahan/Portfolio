@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { projects } from "../data/projects.js";
 import {
-  ArrowLeft, ExternalLink, Github, Calendar,
+  ArrowLeft, Github, Calendar,
   Users, User, Zap, CheckCircle2, Layers, Target, Award
 } from "lucide-react";
 
@@ -70,11 +70,8 @@ const ProjectDetail = () => {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <a href={project.github} className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-xs font-semibold text-primary-foreground transition-all hover:scale-105 sm:text-sm">
+            <a href={project.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-xs font-semibold text-primary-foreground transition-all hover:scale-105 sm:text-sm">
               <Github className="h-4 w-4" /> View Code
-            </a>
-            <a href={project.demo} className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-xs font-semibold text-foreground transition-all hover:border-foreground/30 sm:text-sm">
-              <ExternalLink className="h-4 w-4" /> Live Demo
             </a>
           </div>
         </div>

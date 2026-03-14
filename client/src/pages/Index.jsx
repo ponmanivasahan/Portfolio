@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar.jsx";
 import Hero from "../sections/Hero.jsx";
 import About from "../sections/About.jsx";
 import Projects from "../sections/Projects.jsx";
-import CodingStats from "../sections/CodingStats.jsx";
+// import CodingStats from "../sections/CodingStats.jsx";
 import Achievements from "../sections/Achievements.jsx";
 import Contact from "../sections/Contact.jsx";
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
@@ -54,7 +54,7 @@ const Index = () => {
           <About />
           <Achievements />
           <Projects />
-          <CodingStats />
+          {/* <CodingStats /> */}
           <Contact />
         </main>
         
@@ -65,28 +65,34 @@ const Index = () => {
             </p>
             
             <div className="flex items-center gap-4">
-              <a 
-                href={profile.social?.github || "https://github.com"} 
-                target="_blank" 
-                rel="noreferrer" 
-                className="text-muted-foreground transition-colors hover:text-foreground"
-              >
-                <Github className="h-4 w-4" />
-              </a>
-              <a 
-                href={profile.social?.linkedin || "https://linkedin.com"} 
-                target="_blank" 
-                rel="noreferrer" 
-                className="text-muted-foreground transition-colors hover:text-foreground"
-              >
-                <Linkedin className="h-4 w-4" />
-              </a>
-              <a 
-                href={`mailto:${profile.social?.email || "example@email.com"}`} 
-                className="text-muted-foreground transition-colors hover:text-foreground"
-              >
-                <Mail className="h-4 w-4" />
-              </a>
+              {profile.social?.github && (
+                <a 
+                  href={profile.social.github} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <Github className="h-4 w-4" />
+                </a>
+              )}
+              {profile.social?.linkedin && (
+                <a 
+                  href={profile.social.linkedin} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <Linkedin className="h-4 w-4" />
+                </a>
+              )}
+              {profile.social?.email && (
+                <a 
+                  href={`mailto:${profile.social.email}`} 
+                  className="text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <Mail className="h-4 w-4" />
+                </a>
+              )}
             </div>
             
             <p className="text-xs text-muted-foreground">

@@ -1,138 +1,76 @@
 export const profile = {
-  name: "PONMANI ",
-  title: "Backend Developer & DevOps Engineer",
+  name: "PONMANI VASHAN",
+  title: "JavaScript Developer",
   description:
-    "I build scalable backend systems and automate infrastructure with DevOps and cloud technologies.",
+    "First-year Computer Science student building web projects and currently learning backend development with Node.js.",
   taglines: [
-    "Building scalable backend systems",
-    "Designing distributed architectures",
-    "Automating cloud infrastructure",
-    "Crafting resilient microservices",
-    "Optimizing CI/CD pipelines",
-    "Engineering fault-tolerant services",
+    "JavaScript is the language I know best",
+    "Building projects while learning in college",
+    "Learning Node.js and backend fundamentals",
+    "I learn by tutorials and hands-on practice",
+    "Currently working on college projects side by side",
   ],
   about:
-    "I'm a passionate Backend Developer and DevOps Engineer with 4+ years of experience building robust, scalable systems that power modern applications. I specialize in designing distributed architectures, automating cloud infrastructure, and implementing secure CI/CD pipelines. My approach combines clean code practices with infrastructure-as-code to deliver reliable, high-performance solutions.",
-  specializations: [
+  "I am a first-year Computer Science student who loves JavaScript and project-based learning. I started with HTML and CSS projects, moved to JavaScript apps, and now build React projects while learning Node.js and backend basics. I watch tutorials to learn coding concepts and then apply them by building real projects."
+,  specializations: [
     {
-      title: "Backend Engineering",
+      title: "JavaScript Development",
       description:
-        "Building high-performance APIs, microservices, and event-driven architectures that handle millions of requests with sub-100ms latency.",
-      icon: "server",
-    },
-    {
-      title: "System Design",
-      description:
-        "Architecting distributed systems with reliability, horizontal scalability, fault tolerance, and data consistency guarantees.",
+        "JavaScript is my strongest language and I use it for logic, DOM interactions, and real project building.",
       icon: "cpu",
     },
     {
-      title: "Cloud Infrastructure",
+      title: "Frontend Learning",
       description:
-        "Deploying and managing cloud-native applications on AWS using Terraform, Kubernetes, and serverless architectures.",
+        "I build responsive pages and interfaces with HTML, CSS, and React as part of my regular practice.",
+      icon: "server",
+    },
+    {
+      title: "Backend Journey",
+      description:
+        "Currently learning Node.js and backend development while continuing to build frontend projects.",
       icon: "cloud",
     },
     {
-      title: "DevSecOps Pipelines",
+      title: "Learning by Building",
       description:
-        "Implementing automated CI/CD workflows with integrated security scanning, testing, and zero-downtime deployments.",
+        "I learn from tutorials and immediately practice what I learn by creating working projects.",
       icon: "shield",
     },
   ],
-  experience: [
-    {
-      role: "Senior Backend Engineer",
-      company: "CloudScale Technologies",
-      period: "2030 – Present",
-      location: "San Francisco, CA",
-      description:
-        "Leading backend architecture for microservices platform processing 5M+ daily requests. Designed event-driven systems using Kafka and reduced API latency by 40%. Mentoring a team of 4 junior engineers.",
-      highlights: [
-        "Reduced API latency by 40% through event-driven architecture",
-        "Scaled platform to handle 5M+ daily requests",
-        "Led migration from monolith to 20+ microservices",
-        "Implemented distributed tracing with OpenTelemetry",
-      ],
-      tech: ["Node.js", "Go", "Kafka", "Kubernetes", "PostgreSQL", "Redis"],
-    },
-    {
-      role: "DevOps Engineer",
-      company: "InfraOps Inc.",
-      period: "2029 – 2030",
-      location: "Austin, TX",
-      description:
-        "Built and maintained CI/CD pipelines for 30+ services. Implemented IaC with Terraform, reduced deployment time from 45 min to 8 min, and achieved 99.9% uptime.",
-      highlights: [
-        "Reduced deployment time from 45 min to 8 min",
-        "Achieved 99.9% uptime across all production services",
-        "Automated infrastructure provisioning for 3 environments",
-        "Implemented GitOps workflow with ArgoCD",
-      ],
-      tech: ["Terraform", "AWS", "Docker", "Jenkins", "ArgoCD", "Helm"],
-    },
-    {
-      role: "Backend Developer",
-      company: "DataFlow Systems",
-      period: "2028 – 2029",
-      location: "Remote",
-      description:
-        "Developed RESTful APIs and real-time WebSocket services. Built distributed caching layer with Redis reducing database load by 60%.",
-      highlights: [
-        "Built caching layer reducing DB load by 60%",
-        "Developed WebSocket service for 50K concurrent users",
-        "Designed and shipped 12 production-ready API endpoints",
-      ],
-      tech: ["Node.js", "Express", "Redis", "MongoDB", "Docker"],
-    },
-    {
-      role: "Software Engineering Intern",
-      company: "TechStart Labs",
-      period: "2027 – 2028",
-      location: "Bangalore, India",
-      description:
-        "Contributed to backend services and wrote automated test suites. Built internal CLI tools that improved developer productivity by 25%.",
-      highlights: [
-        "Built CLI tools improving team productivity by 25%",
-        "Wrote 200+ automated tests with 95% coverage",
-        "Contributed to core payment processing module",
-      ],
-      tech: ["Python", "Flask", "MySQL", "Linux", "Git"],
-    },
-  ],
+  experience: [],
   stats: [
-    { label: "Years Experience", value: "4+" },
-    { label: "Projects Delivered", value: "30+" },
-    { label: "Open Source Repos", value: "40+" },
-    { label: "CI/CD Pipelines Built", value: "50+" },
+    { label: "Strongest Language", value: "JavaScript" },
+    { label: "Currently Learning", value: "Node.js" },
+    { label: "Learning Style", value: "Tutorials + Build" },
+    { label: "Current Focus", value: "College Projects" },
   ],
   social: {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com/in",
-    email: "xyz@example.com",
+    github: "https://github.com/ponmanivasahan",
+    linkedin: "",
+    email: "",
   },
   education: [
     {
-      degree: "B.Tech in Computer Science",
-      institution: "Indian Institute of Technology",
-      period: "2026 – 2030",
-      gpa: "8.9 / 10",
+      degree: "B.E. Computer Science and Engineering",
+      institution: "Currently in 1st Year",
+      period: "2025 - Present",
+      gpa: "In Progress",
     },
   ],
   schoolEducation: [
     {
       standard: "12th Standard",
-      school: "XYZ HR Sec School",
-      percentage: "92%",
+      school: "Completed",
+      percentage: "-",
     },
     {
       standard: "10th Standard",
-      school: "XYZ HR Sec School",
-      percentage: "90%",
+      school: "Completed",
+      percentage: "-",
     },
   ],
   certifications: [
-    "AWS Certified Solutions Architect – Associate",
-    "Certified Kubernetes Administrator (CKA)",
-    "HashiCorp Terraform Associate",
+    "Cisco Certified (CCNA)",
   ],
 };

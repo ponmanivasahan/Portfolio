@@ -4,6 +4,11 @@ import {profile} from "../data/profile.js"
 import {Github,Linkedin,Mail,Send,ArrowUpRight} from "lucide-react";
 const Contact = () => {
   const [form,setForm]=useState({name:"",email:"",message:""});
+  const socials = [
+    profile.social?.github && {href:profile.social.github,icon:Github,label:"Github"},
+    profile.social?.linkedin && {href:profile.social.linkedin, icon:Linkedin,label:"LinkedIn"},
+    profile.social?.email && {href:`mailto:${profile.social.email}`,icon:Mail,label:"Email"},
+  ].filter(Boolean);
 
   const handleSubmit=(e)=>{
     e.preventDefault();
@@ -23,11 +28,7 @@ const Contact = () => {
             </h2>
             <p className="flex flex-wrap gap-2 sm:gap-3">Have a project in mind, want to collaborate on open source, or just want to say hello? I'd love to hear from you.</p>
               <div className="flex flex-wrap gap-2 sm:gap-3">
-              {[
-                {href:profile.social.github,icon:Github,label:"Github"},
-                {href:profile.social.linkedin, icon:Linkedin,label:"LinkedIn"},
-                {href:`mailto:${profile.social.email}`,icon:Mail,label:"Email"},
-              ].map((s)=>(
+              {socials.map((s)=>(
                 <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className="group flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-2 text-xs text-muted-foreground transition-all hover:border-foreground/20 hover:text-foreground hover:shadow-md sm:gap-2 sm:px-5 xm:py-2.5 sm:text-sm">
                   <s.icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   {s.label}
