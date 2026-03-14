@@ -93,15 +93,6 @@ const Hero = () => {
           >
             View Projects
           </button>
-
-          <a 
-            href="/resume.pdf" 
-            download 
-            className="btn-secondary text-xs sm:text-sm inline-flex items-center gap-2"
-          >
-            <Download className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-            Download Resume
-          </a>
         </div>
         
         <div className="hero-anim mt-12 grid grid-cols-2 gap-6 sm:mt-20 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-8 md:gap-16">
