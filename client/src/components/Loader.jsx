@@ -60,13 +60,13 @@ const Loader = ({ onComplete }) => {
         tl.to([titleRef.current, subtitleRef.current], {
       opacity: 1,
       y: 0,
-      duration: 1,
-      stagger: 0.2,
+      duration: 0.5,
+      stagger: 0.15,
       ease: "power2.out"
     });
     tl.to({ val: 0 }, {
       val: 100,
-      duration: 2,
+      duration: 1.2,
       ease: "power1.inOut",
       onUpdate: function() {
         setProgress(Math.round(this.targets()[0].val));
@@ -78,10 +78,10 @@ const Loader = ({ onComplete }) => {
             if (onCompleteRef.current) {
               onCompleteRef.current();
             }
-          }, 200);
+          }, 100);
         }
       }
-    }, "+=0.5");
+    }, "+=0.2");
 
     return () => {
       tl.kill();

@@ -4,6 +4,7 @@ import {profile} from "../data/profile.js"
 import {Github,Linkedin,Mail,Send,ArrowUpRight} from "lucide-react";
 const Contact = () => {
   const [form,setForm]=useState({name:"",email:"",message:""});
+  const [submitted, setSubmitted] = useState(false);
   const socials = [
     profile.social?.github && {href:profile.social.github,icon:Github,label:"Github"},
     profile.social?.linkedin && {href:profile.social.linkedin, icon:Linkedin,label:"LinkedIn"},
@@ -12,6 +13,8 @@ const Contact = () => {
 
   const handleSubmit=(e)=>{
     e.preventDefault();
+    if (!form.name.trim()) return;
+    setSubmitted(true);
   };
   return (
     <section id="contact" className="section-gradient relative">
@@ -37,6 +40,25 @@ const Contact = () => {
               ))}
              </div>
           </div>
+          {submitted ? (
+            <div className="flex flex-col items-center justify-center rounded-2xl border border-border bg-card px-8 py-14 text-center space-y-4">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-foreground/10">
+                <Send className="h-6 w-6 text-foreground" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground sm:text-2xl">
+                Thank you, {form.name}!
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Your message has been received. I'll get back to you soon.
+              </p>
+              <button
+                onClick={() => { setSubmitted(false); setForm({name:"",email:"",message:""}); }}
+                className="mt-2 text-xs text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors"
+              >
+                Send another message
+              </button>
+            </div>
+          ) : (
           <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
             {[
               {name:"name",label:"Name",type:"text",placeholder:"Your Name"},
@@ -46,7 +68,7 @@ const Contact = () => {
                     <label className="mb-1.5 block text-xs font-medium text-foreground sm:mb-2 sm:text-sm">
                     {field.label}  
                     </label> 
-                    <input type={field.type} placeholder={field.placeholder} onChange={(e)=> setForm((f)=>({...f,[field.name]:e.target.value}))}
+                    <input type={field.type} placeholder={field.placeholder} value={form[field.name]} onChange={(e)=> setForm((f)=>({...f,[field.name]:e.target.value}))}
                     className="w-full rounded-xl border border-border bg-card px-3 py-2.5 text-xs text-foreground outline-none transition-all placeholder:text-muted-foreground/50 focus:border-foreground/30 focus:ring-2 focus:ring-foreground/10 sm:px-4 sm:py-3 sm:text-sm" />
               </div>
             ))}
@@ -61,6 +83,7 @@ const Contact = () => {
               Send Message <Send className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             </button>
           </form>
+          )}
         </div>
       </div>
     </section>

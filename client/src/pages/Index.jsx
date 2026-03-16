@@ -24,6 +24,7 @@ const Index = () => {
     loaderCompleteRef.current = true;
     
     setLoading(false);
+    window.scrollTo({ top: 0, behavior: "instant" });
     
     setTimeout(() => {
       ScrollTrigger.refresh();
